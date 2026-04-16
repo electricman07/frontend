@@ -12,6 +12,7 @@
     "test": "vitest run"
   },
   "dependencies": {
+    "@strapi/blocks-react-renderer": "^1.0.2",
     "@tanstack/react-devtools": "latest",
     "@tanstack/react-router": "latest",
     "@tanstack/react-router-devtools": "latest",
@@ -19,6 +20,7 @@
     "@tanstack/react-start": "latest",
     "@tanstack/router-plugin": "^1.132.0",
     "embla-carousel-react": "^8.6.0",
+    "husky": "^9.1.7",
     "lucide-react": "^0.545.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
