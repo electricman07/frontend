@@ -4,6 +4,7 @@ import {
   Scripts,
   createRootRoute,
 } from "@tanstack/react-router";
+import { fetchGlobalSettings } from "../utils/global";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { TanStackDevtools } from "@tanstack/react-devtools";
 import Footer from "../components/Footer";
@@ -34,10 +35,12 @@ export const Route = createRootRoute({
       },
     ],
   }),
+  loader: () => fetchGlobalSettings(),
   component: RootDocument,
 });
 
 function RootDocument() {
+  const globalData = Route.useLoaderData();
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -47,8 +50,12 @@ function RootDocument() {
 
       <body className="bg-portfolio bg-fixed bg-cover bg-center font-sans antialiased text-white selection:bg-blue-500/30">
         <div className="flex flex-col min-h-screen">
-          <Header />
-          <div className="grow">
+          <Header
+            siteTitle={globalData.siteTitle}
+            logo={globalData.logo}
+            navLinks={globalData.navLinks}
+          />
+          <div className="grow pt-20">
             <Outlet />
           </div>
           <Footer />

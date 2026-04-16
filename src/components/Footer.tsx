@@ -1,44 +1,86 @@
+import { Link } from "@tanstack/react-router";
+
 export default function Footer() {
-  const year = new Date().getFullYear()
+  const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="mt-20 border-t border-[var(--line)] px-4 pb-14 pt-10 text-[var(--sea-ink-soft)]">
-      <div className="page-wrap flex flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
-        <p className="m-0 text-sm">
-          &copy; {year} Your name here. All rights reserved.
-        </p>
-        <p className="island-kicker m-0">Built with TanStack Start</p>
+    <footer className="w-full border-t border-white/10 bg-black/20 backdrop-blur-sm py-12 mt-20">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
+        {/* Brand Section */}
+        <div className="space-y-4">
+          <Link to="/" className="text-2xl font-bold tracking-tight text-white">
+            Portfolio<span className="text-blue-500">.</span>
+          </Link>
+          <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
+            A digital showcase of creative development and strategic design,
+            built with Strapi 5 and TanStack.
+          </p>
+        </div>
+
+        {/* Quick Navigation */}
+        <div className="flex flex-col gap-3">
+          <h4 className="text-white font-semibold text-sm uppercase tracking-widest mb-2">
+            Explore
+          </h4>
+          <Link
+            to="/about"
+            className="text-gray-400 hover:text-blue-500 transition-colors text-sm"
+          >
+            About Me
+          </Link>
+          <Link
+            to="/portfolio"
+            className="text-gray-400 hover:text-blue-500 transition-colors text-sm"
+          >
+            Case Studies
+          </Link>
+          <Link
+            to="/contact"
+            className="text-gray-400 hover:text-blue-500 transition-colors text-sm"
+          >
+            Get in Touch
+          </Link>
+        </div>
+
+        {/* Contact/Social Section */}
+        <div className="flex flex-col gap-3">
+          <h4 className="text-white font-semibold text-sm uppercase tracking-widest mb-2">
+            Connect
+          </h4>
+          <a
+            href="mailto:hello@example.com"
+            className="text-gray-400 hover:text-white transition-colors text-sm"
+          >
+            hello@yourname.com
+          </a>
+          <div className="flex gap-4 mt-2">
+            {/* Replace with your actual social links */}
+            <a
+              href="#"
+              className="p-2 bg-white/5 rounded-full hover:bg-blue-500/20 transition-all"
+            >
+              <span className="sr-only">LinkedIn</span>
+              <div className="w-5 h-5 border-2 border-current rounded-sm" />
+            </a>
+            <a
+              href="#"
+              className="p-2 bg-white/5 rounded-full hover:bg-blue-500/20 transition-all"
+            >
+              <span className="sr-only">GitHub</span>
+              <div className="w-5 h-5 border-2 border-current rounded-full" />
+            </a>
+          </div>
+        </div>
       </div>
-      <div className="mt-4 flex justify-center gap-4">
-        <a
-          href="https://x.com/tan_stack"
-          target="_blank"
-          rel="noreferrer"
-          className="rounded-xl p-2 text-[var(--sea-ink-soft)] transition hover:bg-[var(--link-bg-hover)] hover:text-[var(--sea-ink)]"
-        >
-          <span className="sr-only">Follow TanStack on X</span>
-          <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32">
-            <path
-              fill="currentColor"
-              d="M12.6 1h2.2L10 6.48 15.64 15h-4.41L7.78 9.82 3.23 15H1l5.14-5.84L.72 1h4.52l3.12 4.73L12.6 1zm-.77 12.67h1.22L4.57 2.26H3.26l8.57 11.41z"
-            />
-          </svg>
-        </a>
-        <a
-          href="https://github.com/TanStack"
-          target="_blank"
-          rel="noreferrer"
-          className="rounded-xl p-2 text-[var(--sea-ink-soft)] transition hover:bg-[var(--link-bg-hover)] hover:text-[var(--sea-ink)]"
-        >
-          <span className="sr-only">Go to TanStack GitHub</span>
-          <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32">
-            <path
-              fill="currentColor"
-              d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
-            />
-          </svg>
-        </a>
+
+      <div className="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p className="text-gray-500 text-xs">
+          © {currentYear} Your Name. All rights reserved.
+        </p>
+        <p className="text-gray-500 text-xs">
+          Built with <span className="text-gray-400">TanStack Start v1</span>
+        </p>
       </div>
     </footer>
-  )
+  );
 }
