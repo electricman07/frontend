@@ -37,12 +37,12 @@ export function Hero({ data }: HeroProps) {
 
         {/* Right Column: Text (Vertically Centered) */}
         <div className="flex-1 text-center md:text-left space-y-4">
-          <h1 className="font-custom text-5xl md:text-7xl font-black text-white leading-tight">
+          <h1 className="font-custom text-5xl md:text-8xl font-black text-[#647abc] tracking-wide">
             {data.heading}
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-lg">
+          <h2 className="font-custom text-xl md:text-5xl text-[#f8931d] max-w-lg tracking-wide">
             {data.subHeading}
-          </p>
+          </h2>
         </div>
       </div>
     </section>
