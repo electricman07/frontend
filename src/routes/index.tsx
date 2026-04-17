@@ -34,7 +34,7 @@ function HomePage() {
   const safeHomeData = homeData || { blocks: [] };
   console.log("Current blocks:", homeData?.blocks);
   return (
-    <main className="min-h-screen flex flex-col justify-center py-20 overflow-hidden">
+    <main className="min-h-screen flex flex-col justify-center py-7.5 overflow-hidden">
       {/* Hero Section */}
       {safeHomeData.blocks?.map((block: any, index: number) => {
         if (block.__component === "hero.sections") {
