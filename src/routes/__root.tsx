@@ -48,14 +48,17 @@ function RootDocument() {
         <HeadContent />
       </head>
 
-      <body className="bg-portfolio bg-fixed bg-cover bg-center font-sans antialiased text-white selection:bg-blue-500/30">
+      <body
+        className="bg-portfolio bg-fixed bg-cover bg-center font-sans antialiased text-white selection:bg-blue-500/30"
+        suppressHydrationWarning
+      >
         <div className="flex flex-col min-h-screen">
           <Header
             siteTitle={globalData.siteTitle}
             logo={globalData.logo}
             navLinks={globalData.navLinks}
           />
-          <div className="grow pt-20">
+          <div className="grow pt-5">
             <Outlet />
           </div>
           <Footer />

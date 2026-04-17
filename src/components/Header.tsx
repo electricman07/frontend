@@ -8,7 +8,7 @@ export default function Header({ siteTitle, logo, navLinks }: GlobalData) {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-white/10 bg-white/5 backdrop-blur-md">
-      <nav className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <nav className="max-w-7xl mx-auto px-6 h-10 flex items-center justify-between">
         {/* Logo & Title Section */}
         <Link to="/" className="flex items-center gap-3 group">
           <div className="w-10 h-10 rounded-lg overflow-hidden border border-white/20 bg-white/10 flex items-center justify-center transition-transform group-hover:scale-105">
