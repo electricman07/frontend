@@ -15,10 +15,10 @@ export default function Header({ siteTitle, logo, navLinks }: GlobalData) {
             <img
               src={logoUrl}
               alt={logo?.alternativeText || "Logo"}
-              className="w-full h-full object-cover"
+              className="w-full h-full "
             />
           </div>
-          <span className="text-xl font-bold tracking-tight text-white">
+          <span className="text-xl font-bold tracking-widest font-custom text-[#647abc]">
             {siteTitle}
           </span>
         </Link>
@@ -29,8 +29,10 @@ export default function Header({ siteTitle, logo, navLinks }: GlobalData) {
             <li key={link.id}>
               <Link
                 to={link.url}
-                activeProps={{ className: "text-blue-500 font-semibold" }}
-                inactiveProps={{ className: "text-gray-400 hover:text-white" }}
+                activeProps={{ className: "text-[#647abc] font-semibold" }}
+                inactiveProps={{
+                  className: "text-[#f8931d] hover:text-[#647abc]",
+                }}
                 className="transition-colors text-sm uppercase tracking-widest"
                 activeOptions={{ exact: link.url === "/" }}
               >
