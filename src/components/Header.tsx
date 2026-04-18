@@ -1,9 +1,11 @@
 import { Link } from "@tanstack/react-router";
 import { type GlobalData } from "../utils/global";
 
+const STRAPI_URL = import.meta.env.VITE_STRAPI_URL || "http://127.0.0.1:1338";
+
 export default function Header({ siteTitle, logo, navLinks }: GlobalData) {
   const logoUrl = logo?.url
-    ? `${process.env.STRAPI_URL}${logo.url}`
+    ? `${STRAPI_URL}${logo.url}`
     : "/logo.png";
 
   return (
