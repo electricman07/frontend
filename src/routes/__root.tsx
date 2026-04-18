@@ -36,6 +36,18 @@ export const Route = createRootRoute({
     ],
   }),
   loader: () => fetchGlobalSettings(),
+  errorComponent: ({ error }) => (
+    <div className="pt-32 text-center text-white">
+      <h1 className="text-2xl font-bold">App Error</h1>
+      <p className="text-red-400">{error.message}</p>
+      <button
+        onClick={() => window.location.reload()}
+        className="mt-4 underline"
+      >
+        Retry
+      </button>
+    </div>
+  ),
   component: RootDocument,
 });
 
