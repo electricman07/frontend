@@ -23,3 +23,15 @@ body,
   min-height: 100%;
   margin: 0;
 }
+
+.image-style-align-left {
+  float: left;
+  margin-right: 1.5rem;
+}
+.image-style-align-right {
+  float: right;
+  margin-left: 1.5rem;
+}
+figure.image {
+  margin: 1rem 0;
+}

@@ -7,6 +7,10 @@ import { Link } from "@tanstack/react-router";
 
 const STRAPI_URL = import.meta.env.VITE_STRAPI_URL || "http://127.0.0.1:1338";
 
+interface RichTextProps {
+  content: BlocksContent | string;
+}
+
 export default function RichTextRenderer({
   content,
 }: {
@@ -14,12 +18,23 @@ export default function RichTextRenderer({
 }) {
   if (!content) return null;
 
+  if (typeof content === "string") {
+    return (
+      <div
+        className="prose prose-invert prose-lg max-w-none 
+                   prose-headings:text-white prose-p:text-gray-300 
+                   prose-a:text-blue-400 prose-img:rounded-2xl 
+                   prose-img:border prose-img:border-white/10"
+        dangerouslySetInnerHTML={{ __html: content }}
+      />
+    );
+  }
+
   return (
     <div className="prose prose-invert prose-lg max-w-none prose-headings:text-white prose-p:text-gray-300 prose-a:text-blue-400">
       <BlocksRenderer
         content={content}
         blocks={{
-          // Use TanStack Router Link for internal navigation
           link: ({ children, url }) => (
             <Link to={url as any} className="underline hover:text-blue-300">
               {children}
